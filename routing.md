@@ -1,72 +1,79 @@
 ## tree
-[研究室サーバ群]
-├── Webサーバ (Apache/Nginx)
-│   └── root/ (公開コンテンツ)
-│       ├── index.html
-│       ├── research.html
-│       ├── members.html
-│       ├── news.html
-│       ├── for-students.html
-│       ├── for-industry.html
-│       ├── for-seminar.html
-│       └── contact.html
+root/
+├── public/                         # 静的コンテンツ（公開HTML）
+│   ├── index.html                  # Home
+│   ├── research.html               # Research（研究テーマ + 論文成果）
+│   ├── members.html                # Members（教員・学生紹介）
+│   ├── news.html                   # News & Events
+│   ├── for-students.html           # For Students
+│   ├── for-industry.html           # For Industry
+│   ├── for-seminar.html            # For Seminar（アーカイブ案内）
+│   └── contact.html                # Contact
 │
-├── 内部アーカイブサーバ (Reactアプリ + API)
-│   └── root/seminar/ (認証必須)
-│       ├── index.html (Reactアプリ)
-│       ├── assets/ (Reactビルド成果物)
-│       └── config.js (APIエンドポイント設定)
+├── seminar/                        # 内部アーカイブ（Reactアプリ）
+│   ├── client/                     # React (フロント)
+│   │   ├── public/
+│   │   │   └── index.html
+│   │   ├── src/
+│   │   │   ├── components/
+│   │   │   ├── pages/
+│   │   │   ├── App.jsx
+│   │   │   └── index.js
+│   │   ├── package.json
+│   │   └── ...
+│   │
+│   └── api/                        # Express API (バックエンド)
+│       ├── app.js                  # サーバ本体
+│       ├── routes/
+│       │   ├── reports.js
+│       │   └── papers.js
+│       ├── models/
+│       │   └── db.js
+│       ├── package.json
+│       └── ...
 │
-├── APIサーバ (同一物理 or VM)
-│   ├── REST API (Node.js/Express または Python/Flask)
-│   └── エンドポイント
-│       ├── GET /api/reports  (ゼミ課題レポート一覧)
-│       ├── GET /api/papers   (卒論一覧)
-│       └── GET /api/files/... (PDFファイル取得)
-│
-└── DBサーバ (MySQL/PostgreSQL)
-    ├── reports テーブル
-    │   ├── id, title, author, year, keywords, file_path
-    └── papers テーブル
-        ├── id, title, author, year, keywords, file_path
+└── package.json                    # 全体管理用 (Expressがpublicとseminarを統合配信)
 
 <br>
 
 ## flow
-        [学生PCのブラウザ]
-        │
-        │ 1. HTTPリクエスト (例: /seminar/reports)
-        ▼
-[研究室Webサーバ]
-   └── 配信: Reactアプリ (seminar/index.html, assets/)
-        │
-        │ 2. ReactがAPI呼び出し (fetch /api/reports)
-        ▼
-[APIサーバ (Express/Flask)]
-   └── 認証処理 (Basic認証 or LAN制御)
-        │
-        │ 3. SQLクエリ発行 (SELECT * FROM reports)
-        ▼
-[MySQLサーバ]
-   └── データ取得 (reports/papers テーブル)
-        │
-        │ 4. JSONレスポンスに変換
-        ▼
-[APIサーバ]
-   └── JSON返却
-        │
-        │ 5. JSONを受信 → Reactに渡す
-        ▼
-[Reactアプリ]
-   └── 検索・フィルタ処理 (ブラウザ側で実行)
-        │
-        │ 6. ユーザー操作でファイルプレビュー要求
-        ▼
-[APIサーバ]
-   └── ファイルパス確認 (DBの file_path を参照)
-        │
-        │ 7. PDFファイルを返却 (application/pdf)
-        ▼
 [学生PCのブラウザ]
-   └── iframe でPDFプレビュー or ダウンロード
+        │
+        │ 1. アクセス (例: /, /research.html, /seminar/)
+        ▼
+[Expressサーバ]
+   ├── 公開HTML配信 (public/*.html)
+   │     └── /index.html, /research.html ...
+   │
+   ├── React配信 (/seminar/*)
+   │     └── seminar/client/build/index.html
+   │
+   └── APIルート (/api/*)
+         │
+         │ 2. API呼び出し (例: GET /api/reports)
+         ▼
+   [MySQLサーバ]
+         └── SQL実行 (SELECT * FROM reports)
+         │
+         │ 3. 検索結果を取得
+         ▼
+   [Expressサーバ(API)]
+         └── JSON形式に変換
+         │
+         │ 4. JSONレスポンス
+         ▼
+[学生PCのブラウザ]
+   ├── ReactアプリがJSONを受信
+   ├── 検索・フィルタ処理 (ブラウザ側)
+   └── クリックでPDFプレビュー要求
+         │
+         │ 5. GET /api/files/:id
+         ▼
+   [Expressサーバ(API)]
+         └── MySQLでfile_path参照 → ストレージからPDF取得
+         │
+         │ 6. application/pdf を返却
+         ▼
+[学生PCのブラウザ]
+   └── iframe 埋め込み or ダウンロード
    
