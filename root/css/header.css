@@ -7,8 +7,45 @@
  * styles for the whole header
  */
 .header-container {
+    /* Added flexbox for layout */
     display: flex;
+
+    /* Background image */
     background-image: url(../img/Header_BG.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* arrangement of items */
     justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+
+    /* Padding around the content */
     padding: 1rem 5%;
+}
+
+/*
+ * styles for the link text
+ */
+a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/*
+ * styles for the site title
+ */
+.site-title {
+    letter-spacing: 0.2em;
+}
+
+/*
+ * styles for the navigation links
+ */
+.site-nav {
+    display: flex;
+    gap: 1.5rem;
 }

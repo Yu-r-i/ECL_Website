@@ -10,7 +10,11 @@
     display: flex;
     justify-content: space-between;
     background-image: url(../img/Footer_BG.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 1rem 5%;
+    align-items: center;
 }
 
 /*
@@ -20,12 +24,21 @@
     display: grid;
     grid-auto-flow: column;
     grid-template-rows: repeat(3, auto);
+    column-gap: 2rem;
+    font-weight: bold;
+}
+
+/*
+ * styles for the info text
+ */
+.footer-info {
+    text-align: center;
 }
 
 /*
  * styles for the logo
  */
 .footer-logo img {
-    max-width: 200px;
+    max-width: 20rem;
     height: auto;
 }
