@@ -8,6 +8,9 @@
  */
 .footer-container {
     display: flex;
+    justify-content: space-between;
+    background-image: url(../img/Footer_BG.png);
+    padding: 1rem 5%;
 }
 
 /*

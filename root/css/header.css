@@ -6,6 +6,9 @@
 /*
  * styles for the whole header
  */
-.site-header {
+.header-container {
     display: flex;
+    background-image: url(../img/Header_BG.png);
+    justify-content: space-between;
+    padding: 1rem 5%;
 }
