@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>For Seminar - 電子商取引研究室</title>
+
+    <!-- 共通CSS -->
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+
+<body>
+    <!-- 共通ヘッダー -->
+    <div id="header"></div>
+
+    <main>
+        <p>ゼミ生向けページのさんぷるてきすと</p>
+    </main>
+
+    <!-- 共通フッター -->
+    <div id="footer"></div>
+
+    <!-- JSで部品差し込み -->
+    <script src="/js/include.js"></script>
+    <script>
+        loadPart("header", "/partials/header.html");
+        loadPart("footer", "/partials/footer.html");
+    </script>
+</body>
+
+</html>
