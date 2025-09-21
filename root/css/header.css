@@ -3,6 +3,9 @@
  * Styles for the header section of the ECL website
  */
 
-footer {
-    margin: auto;
+/*
+ * styles for the whole header
+ */
+.site-header {
+    display: flex;
 }

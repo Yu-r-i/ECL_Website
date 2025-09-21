@@ -3,6 +3,26 @@
  * Styles for the footer section of the ECL website
  */
 
-footer {
-    margin: auto;
+/*
+ * styles for the whole footer
+ */
+.footer-container {
+    display: flex;
+}
+
+/*
+ * styles for the links
+ */
+.footer-links {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(3, auto);
+}
+
+/*
+ * styles for the logo
+ */
+.footer-logo img {
+    max-width: 200px;
+    height: auto;
 }
