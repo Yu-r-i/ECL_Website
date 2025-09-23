@@ -3,30 +3,54 @@
  * CSS styles for the ArchivePage component.
  */
 
+/*
+ * styles for whole page
+ */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/*
+ * styles for archive page main area
+ */
 .archive-page {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
+/*
+ * styles for conroler area
+ */
 .archive-controls {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem;
-    border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
 }
 
+/*
+ * styles for content area
+ */
 .archive-content {
-    display: flex;
-    flex: 1;
+  display: flex;
+  flex: 1;
 }
 
+/*
+ * styles for file tree
+ */
 .file-tree {
-    width: 30%;
-    border-right: 1px solid #ccc;
-    padding: 1rem;
-    overflow-y: auto;
+  width: 30%;
+  border-right: 1px solid #ccc;
+  padding: 1rem;
+  overflow-y: auto;
 }
 
+/*
+ * styles for file preview area
+ */
 .file-preview {
   flex: 1;
   padding: 1rem;
@@ -34,7 +58,17 @@
   justify-content: center;
 }
 
+/*
+ * styles for PDF iframe
+ */
 .pdf-frame {
   width: 100%;
   border: none;
+}
+
+/*
+ * styles for arborist nodes
+ */
+.arborist-node:hover {
+  background-color: #f0f0f0;
 }

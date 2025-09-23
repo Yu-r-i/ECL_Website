@@ -1,5 +1,5 @@
 /**
- * css/footer.css
+ * root/seminar/client/src/css/footer.css
  * Styles for the footer section of the ECL website
  */
 
@@ -24,7 +24,7 @@
     display: grid;
     grid-auto-flow: column;
     grid-template-rows: repeat(3, auto);
-    column-gap: 2rem;
+    column-gap: 3rem;
     font-weight: bold;
 }
 

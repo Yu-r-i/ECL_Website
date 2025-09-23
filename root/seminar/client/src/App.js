@@ -4,7 +4,7 @@
  */
 
 // Importing necessary libraries
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // Importing Header and Footer components
 import Header from "./components/Header";
@@ -20,7 +20,7 @@ import "./css/common.css";
 
 function App() {
   return (
-    <>
+    <div className="app-container">
       <Header />
       <main>
         <Routes>
@@ -28,7 +28,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 

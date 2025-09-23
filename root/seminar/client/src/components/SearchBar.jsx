@@ -17,6 +17,8 @@ export default function SearchBar({ onSearch }) {
     <form className="search-bar" onSubmit={handleSubmit}>
       <input
         type="text"
+        id="searchQuery"
+        name="searchQuery"
         placeholder="キーワード検索..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}

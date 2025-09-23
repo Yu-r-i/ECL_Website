@@ -15,7 +15,12 @@ export default function FilterList({ options, onFilter }) {
 
   return (
     <div className="filter-list">
-      <select value={selected} onChange={handleChange}>
+      <select
+        id="filterSelect"
+        name="filterSelect"
+        value={selected}
+        onChange={handleChange}
+      >
         <option value="">すべて表示</option>
         {options.map((opt) => (
           <option key={opt} value={opt}>

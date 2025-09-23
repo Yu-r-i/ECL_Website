@@ -1,5 +1,5 @@
 /**
- * css/common.css
+ * root/seminar/client/src/css/common.css
  * Common styles for the ECL website
  */
 
@@ -29,6 +29,6 @@ body {
  * Main content area
  */
 main {
+    flex: 1;
     padding: 2rem;
-    min-height: 400px;
 }
