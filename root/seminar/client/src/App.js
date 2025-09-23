@@ -24,7 +24,7 @@ function App() {
       <Header />
       <main>
         <Routes>
-          <Route path="/seminar/archive" element={<ArchivePage />} />
+          <Route path="/" element={<ArchivePage />} />
         </Routes>
       </main>
       <Footer />

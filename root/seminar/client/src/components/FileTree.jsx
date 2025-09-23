@@ -9,35 +9,19 @@ export default function FileTree({ onSelect }) {
   // データ構造（react-arborist用）
   const treeData = [
     {
-      id: "2023",
-      name: "2023",
+      id: "2025",
+      name: "2025",
       children: [
         {
-          id: "2023-studentA",
-          name: "studentA",
+          id: "2312110013",
+          name: "Yuri Funato",
           children: [
             { id: "2023-studentA-report1", name: "report1.pdf" },
             { id: "2023-studentA-report2", name: "report2.md" },
           ],
         },
-        {
-          id: "2023-studentB",
-          name: "studentB",
-          children: [{ id: "2023-studentB-thesis", name: "thesis.pdf" }],
-        },
       ],
-    },
-    {
-      id: "2024",
-      name: "2024",
-      children: [
-        {
-          id: "2024-studentC",
-          name: "studentC",
-          children: [{ id: "2024-studentC-thesis", name: "graduation_thesis.pdf" }],
-        },
-      ],
-    },
+    }
   ];
 
   // ファイルクリック処理
@@ -45,7 +29,7 @@ export default function FileTree({ onSelect }) {
     if (nodes && nodes.length > 0) {
       const node = nodes[0];
       if (!node.isInternal) {
-        onSelect(node.data.id); // ファイルのidを親へ渡す
+        onSelect(node.data.id);
       }
     }
   };
