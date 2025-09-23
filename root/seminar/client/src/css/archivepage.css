@@ -1,0 +1,40 @@
+/**
+ * root/seminar/client/src/css/archivepage.css
+ * CSS styles for the ArchivePage component.
+ */
+
+.archive-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.archive-controls {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.archive-content {
+    display: flex;
+    flex: 1;
+}
+
+.file-tree {
+    width: 30%;
+    border-right: 1px solid #ccc;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.file-preview {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.pdf-frame {
+  width: 100%;
+  border: none;
+}
