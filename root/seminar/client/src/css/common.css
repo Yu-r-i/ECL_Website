@@ -1,0 +1,34 @@
+/**
+ * css/common.css
+ * Common styles for the ECL website
+ */
+
+/*
+ *  Reset some default styles
+ */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Base styles
+ */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/*
+ * Main content area
+ */
+main {
+    padding: 2rem;
+    min-height: 400px;
+}

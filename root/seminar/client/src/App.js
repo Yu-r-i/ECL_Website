@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+/**
+ * root/seminar/client/src/App.js
+ * Main application component for the seminar client.
+ */
+
+// Importing Header and Footer components
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+// Importing CSS files for styling
+import "./css/header.css";
+import "./css/footer.css";
+import "./css/common.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <main>
+        <h1>Hello Seminar App</h1>
+      </main>
+      <Footer />
     </div>
   );
 }
