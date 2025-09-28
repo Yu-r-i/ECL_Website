@@ -6,8 +6,10 @@
 import { useState } from "react";
 
 export default function SearchBar({ onSearch }) {
+  // state for the search query
   const [query, setQuery] = useState("");
 
+  // submit handler for the form
   const handleSubmit = (e) => {
     e.preventDefault();
     onSearch(query);

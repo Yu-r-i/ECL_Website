@@ -6,7 +6,7 @@
 import { Tree } from "react-arborist";
 
 export default function FileTree({ onSelect }) {
-  // データ構造（react-arborist用）
+  // data structure for the tree
   const treeData = [
     {
       id: "2025",
@@ -24,7 +24,7 @@ export default function FileTree({ onSelect }) {
     }
   ];
 
-  // ファイルクリック処理
+  // click handler for selecting a file
   const handleSelect = (nodes) => {
     if (nodes && nodes.length > 0) {
       const node = nodes[0];

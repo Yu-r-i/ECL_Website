@@ -8,6 +8,7 @@ import { useState } from "react";
 export default function FilterList({ options, onFilter }) {
   const [selected, setSelected] = useState("");
 
+  // change handler for the select dropdown
   const handleChange = (e) => {
     setSelected(e.target.value);
     onFilter(e.target.value);
