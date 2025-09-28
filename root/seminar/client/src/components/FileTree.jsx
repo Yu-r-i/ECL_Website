@@ -6,7 +6,7 @@
 import { Tree } from "react-arborist";
 
 export default function FileTree({ onSelect }) {
-  // data structure for the tree
+  // sample data structure for the tree
   const treeData = [
     {
       id: "2025",
