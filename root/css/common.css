@@ -29,10 +29,6 @@ body {
  * Main content area
  */
 main {
-    /*padding: 2rem;*/
-    min-height: 400px;
-}
-
-img.mainImage {
-    max-width: 1171px;
+    padding: 2rem;
+    min-height: 600px;
 }
