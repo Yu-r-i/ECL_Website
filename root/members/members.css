@@ -6,3 +6,8 @@
 body {
     margin: auto;
 }
+
+main.box{
+    display: flex;
+    gap: 20px;
+}
