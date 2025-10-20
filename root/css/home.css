@@ -1,0 +1,19 @@
+/**
+ * css/home.css
+ * Layout styles for the main page.
+ */
+
+body {
+    margin: auto;
+}
+
+.box {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 2rem;
+    margin: auto;
+}
+
+.research, .membersbox, .news, .for-students, .for-industry, .for-seminar {
+    /* width: 40%; */
+}
