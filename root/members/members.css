@@ -7,7 +7,16 @@ body {
     margin: auto;
 }
 
-main.box{
+.box{
     display: flex;
     gap: 20px;
+}
+
+p.textbox{
+    flex: 7;
+}
+
+div.imgbox{
+    /* width: 35%; */
+    flex: 3;
 }
