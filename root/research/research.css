@@ -6,3 +6,19 @@
 body {
     margin: auto;
 }
+
+.box{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: auto;
+}
+
+.box p{
+    /* background-color: rgb(202, 223, 252); */
+    display: flex; /* Flexboxを有効にする */
+    align-items: center; /* 子要素を垂直方向（上下）の中央に揃える */
+    justify-content: center;
+    background: linear-gradient(90deg, rgb(217 237 255), rgb(222, 246, 253));
+    height: 60px;
+}

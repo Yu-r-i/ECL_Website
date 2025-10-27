@@ -4,5 +4,81 @@
  */
 
 body {
-    margin: auto;
+    font-family: Arial, sans-serif; /* フォントを指定 */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* 全体の背景を少し灰色に */
+}
+
+main {
+    padding-top: 50px; /* ヘッダーの下に余白を設ける */
+    padding-bottom: 50px;
+}
+
+.box {
+    /* newsboxとeventsboxを横並びにする */
+    /* display: flex;  */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* newsboxとeventsboxの間に隙間を作る */
+    column-gap: 150px;
+    row-gap: 30px; 
+    
+    /* 横幅を制限し、中央に配置 */
+    width: 80%; 
+    max-width: 1100px; /* 最大幅を設定 */
+    margin: 0 auto; 
+}
+
+.newsbox, .eventsbox {
+    /* 親の .box の幅を均等に分割する */
+    flex: 1; 
+    
+    /* ボックスの高さを設定 (画像では高さが不足しているため) */
+    height: 455px; 
+    
+    /* ボックスの背景色と影で立体感を出す */
+    background-color: #e6f7ff; /* ボックスの背景を白に */
+    border: 1px solid #e0e0e0; /* 細い枠線 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* ほんのりとした影 */
+    
+    /* テキストを上下中央・左右中央に配置する設定 */
+    display: flex; 
+    flex-direction: column; /* テキストを縦に並べる */
+    align-items: right; /* 水平方向 (左右) 中央揃え */
+    
+    padding: 50px;
+    padding-top: 30px;
+}
+
+.newsbox p, .eventsbox p {
+    font-size: 1.1em; /* フォントサイズを少し大きく */
+    color: #333;
+    margin: 5px 0; /* <p>要素の上下マージンを調整 */
+}
+
+.box ul li{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.newstitle{
+    order: 1;
+}
+
+.eventstitle{
+    orphans: 2;
+}
+
+.newsbox{
+    order: 3;
+}
+
+.eventsbox{
+    order: 4;
+}
+
+.newstitle, .eventstitle{
+    text-align: center;
+    font-size: 40px;
 }
