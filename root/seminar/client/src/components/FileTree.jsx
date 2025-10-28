@@ -1,34 +1,47 @@
 /**
  * root/seminar/client/src/components/FileTree.jsx
- * directory tree component for the seminar website.
+ * Directory tree component (API integrated).
  */
 
+import { useEffect, useState } from "react";
 import { Tree } from "react-arborist";
 
 export default function FileTree({ onSelect }) {
-  // sample data structure for the tree
-  const treeData = [
-    {
-      id: "2025",
-      name: "2025",
-      children: [
-        {
-          id: "2312110013",
-          name: "Yuri Funato",
-          children: [
-            { id: "2023-studentA-report1", name: "report1.pdf" },
-            { id: "2023-studentA-report2", name: "report2.md" },
-          ],
-        },
-      ],
-    }
-  ];
+  const [treeData, setTreeData] = useState([]);
 
-  // click handler for selecting a file
+  // Fetch files from API and convert to hierarchical structure
+  useEffect(() => {
+    fetch("http://localhost:4000/api/files")
+      .then((res) => res.json())
+      .then((data) => {
+        const grouped = {};
+        data.forEach((file) => {
+          const { year, student, name, path } = file;
+          if (!grouped[year]) grouped[year] = {};
+          if (!grouped[year][student]) grouped[year][student] = [];
+          grouped[year][student].push({ id: path, name });
+        });
+
+        const formatted = Object.keys(grouped).map((year) => ({
+          id: year,
+          name: year,
+          children: Object.keys(grouped[year]).map((student) => ({
+            id: `${year}-${student}`,
+            name: student,
+            children: grouped[year][student],
+          })),
+        }));
+
+        setTreeData(formatted);
+      })
+      .catch((err) => console.error("Failed to load files:", err));
+  }, []);
+
+  // Click handler
   const handleSelect = (nodes) => {
     if (nodes && nodes.length > 0) {
       const node = nodes[0];
-      if (!node.isInternal) {
+      if (!node.isInternal && node.data.id) {
         onSelect(node.data.id);
       }
     }
