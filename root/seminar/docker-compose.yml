@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  web:
+    build: ./client
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+    networks:
+      - ecl_net
+
+  api:
+    build: ./api
+    ports:
+      - "4000:4000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/ecl_archive
+    depends_on:
+      - mongo
+    networks:
+      - ecl_net
+
+  mongo:
+    image: mongo:8
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - ecl_net
+
+networks:
+  ecl_net:
+    driver: bridge
+
+volumes:
+  mongo_data:
+  
