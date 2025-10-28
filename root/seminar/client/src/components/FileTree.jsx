@@ -11,7 +11,7 @@ export default function FileTree({ onSelect }) {
 
   // Fetch files from API and convert to hierarchical structure
   useEffect(() => {
-    fetch("http://localhost:4000/api/files")
+    fetch("/api/files")
       .then((res) => res.json())
       .then((data) => {
         const grouped = {};
@@ -33,9 +33,7 @@ export default function FileTree({ onSelect }) {
         }));
 
         setTreeData(formatted);
-      })
-      .catch((err) => console.error("Failed to load files:", err));
-  }, []);
+      })}, []);
 
   // Click handler
   const handleSelect = (nodes) => {
