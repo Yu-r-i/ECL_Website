@@ -12,12 +12,15 @@ body {
     gap: 20px;
 }
 
-p.textbox{
-    flex: 7;
+.text{
+    display: flex;
+    flex-direction: column;
 }
 
-div.imgbox{
-    /* width: 35%; */
-    flex: 3;
+.introduction{
+    height: 500px;
 }
 
+.adress{
+    background-color: antiquewhite;
+}
