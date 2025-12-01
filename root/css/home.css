@@ -14,6 +14,7 @@ body {
     margin: auto;
 }
 
-.research, .membersbox, .news, .for-students, .for-industry, .for-seminar {
-    /* width: 40%; */
+main .box img:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(132, 132, 132, 0.35);
 }

@@ -21,15 +21,37 @@ li {
  * Base styles
  */
 body {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Header / Main / Footer */
+    height: 100vh; /* 全体を1画面に固定 */
+    overflow: hidden; /* 全体のスクロールを禁止 */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     line-height: 1.6;
     width: 100%;
 }
 
+
 /*
  * Main content area
  */
+/* main は余った高さぴったり */
 main {
+    overflow: auto; /* 中身が多い場合に中だけスクロールさせる */
+    height: 100%;
     padding: 2rem;
-    min-height: 600px;
+    /* min-height: 600px; */
+    background-color: #effaff;
 }
+
+/* 画面ちょうどに収める基本設定 */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* 画像がはみ出ないようにブロック化 */
+main img {
+    display: block;
+}
+

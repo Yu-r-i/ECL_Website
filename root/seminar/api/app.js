@@ -1,13 +1,6 @@
-/*
- * API server for ECL Seminar Website
- * Provides endpoints to access seminar files stored in MongoDB
- */
-
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-
-const PORT = 4000;
 
 const app = express();
 app.use(cors());
@@ -29,6 +22,7 @@ app.get("/api/files", async (req, res) => {
   res.json(files);
 });
 
+const PORT = 4000;
 app.listen(PORT, () => {
   console.log(`API server running on port ${PORT}`);
 });

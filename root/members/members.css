@@ -12,9 +12,17 @@ body {
     gap: 20px;
 }
 
-.text{
-    display: flex;
-    flex-direction: column;
+.imgbox {
+    display: grid;
+}
+
+.name {
+    display: grid;
+}
+
+.name p{
+    font-size: 16px;
+    padding-left: 129px;
 }
 
 .introduction{
@@ -23,4 +31,45 @@ body {
 
 .adress{
     background-color: antiquewhite;
+    margin-bottom: 4rem;
+}
+
+.adress p{
+    padding: 15px;
+}
+
+.vero4DRT img{
+    /* background-color: aqua; */
+    max-width: 512.44px;
+}
+
+.profile-images .bitcoin{
+    float: right;
+    width: 160px;
+    margin-right: 50px;
+    margin-top: 30px;
+}
+
+.profile-images .html{
+    float: right;
+    width: 100px;
+    margin-right: 50px;
+}
+
+.profile-images .node{
+    float: right;
+    width: 100px;
+    margin-right: 40px;
+    margin-top: 80px;
+}
+
+.profile-images img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.profile-text {
+    overflow: hidden;
 }
