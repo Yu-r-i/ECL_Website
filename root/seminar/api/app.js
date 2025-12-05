@@ -8,6 +8,11 @@ app.use(cors());
 const mongoURI = "mongodb://mongo:27017/ecl_archive";
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
+/**
+ * File Schema
+ * 
+ * - name: Name of the file
+ */
 const fileSchema = new mongoose.Schema({
   name: String,
   path: String,
