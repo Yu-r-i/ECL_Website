@@ -16,7 +16,7 @@ main {
     /* newsboxとeventsboxを横並びにする */
     /* display: flex;  */
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     /* newsboxとeventsboxの間に隙間を作る */
     column-gap: 50px;
     row-gap: 30px; 
