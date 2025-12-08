@@ -27,24 +27,21 @@ main {
 }
 
 .Senior-Students, .work {
-    /* 親の .box の幅を均等に分割する */
-    flex: 1; 
-    
-    height: 455px; 
-    
-    /* ボックスの背景色と影で立体感を出す */
-    background-color: #e6f7ff; /* ボックスの背景を白に */
-    border: 1px solid #e0e0e0; /* 細い枠線 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* ほんのりとした影 */
-    
-    /* テキストを上下中央・左右中央に配置する設定 */
-    display: flex; 
-    flex-direction: column; /* テキストを縦に並べる */
-    align-items: right; /* 水平方向中央揃え */
-    
+    flex: 1;
+    background-color: #e6f7ff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    flex-direction: column;
+
     padding: 50px;
-    padding-top: 30px;
+    padding-top: 20px;
+
+    height: 400px;       /* 固定高さがあるのでスクロールが必要 */
+    overflow-y: auto;    /* ← これを追加するだけで枠内スクロールできる */
 }
+
 
 .Senior-Students p, .work p {
     font-size: 20px; /* フォントサイズを少し大きく */
@@ -60,4 +57,30 @@ main {
 .box a{
     size: 20px;
     text-decoration: underline;
+}
+
+.eclbox{
+    border: 1px solid #e0e0e0;
+    height: 150px;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #e6f7ff;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+    padding-top: 10px;
+}
+
+.eclbox .ecl{
+    font-size: 40px;
+}
+
+.eclbox .text{
+    display: flex;
+    align-items:center;
+}
+
+.text .toha {
+    font-size: 20px;
+    margin-left: 10px;
 }
